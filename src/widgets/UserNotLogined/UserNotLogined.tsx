@@ -1,6 +1,17 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import styled from "styled-components";
+
+const RouteButton = styled.button`
+  padding: 10px 20px,
+  backgroundColor: #0070f3,
+  color: #fff,
+  border: none,
+  borderRadius: 5px,
+  cursor: pointer,
+  fontSize: 16px,
+`;
 
 export const UserNotLogined = () => {
   const router = useRouter();
@@ -17,28 +28,15 @@ export const UserNotLogined = () => {
         alignItems: "center",
       }}
     >
-      <button onClick={() => navigateTo("/auth")} style={buttonStyle}>
+      <RouteButton onClick={() => navigateTo("/auth")}>
         Перейти на страницу аутентификации
-      </button>
-      <button
-        onClick={() => navigateTo("/currency-charts")}
-        style={buttonStyle}
-      >
+      </RouteButton>
+      <RouteButton onClick={() => navigateTo("/currency-charts")}>
         Перейти на страницу графиков валют
-      </button>
-      <button onClick={() => navigateTo("/guide")} style={buttonStyle}>
+      </RouteButton>
+      <RouteButton onClick={() => navigateTo("/guide")}>
         Перейти на страницу руководства
-      </button>
+      </RouteButton>
     </div>
   );
-};
-
-const buttonStyle: React.CSSProperties = {
-  padding: "10px 20px",
-  backgroundColor: "#0070f3",
-  color: "#fff",
-  border: "none",
-  borderRadius: "5px",
-  cursor: "pointer",
-  fontSize: "16px",
 };
