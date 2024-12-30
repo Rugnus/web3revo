@@ -1,7 +1,6 @@
 "use client";
 
 import { UserNotLogined } from "@/widgets";
-import styles from "./page.module.css";
 import { RootState, useAppSelector } from "./store";
 
 export default function Home() {
@@ -10,9 +9,9 @@ export default function Home() {
   const isUserLogined = user;
 
   return (
-    <div className={styles.page}>
+    <div>
       {!isUserLogined ? (
-        <div className={styles.main}>
+        <div>
           <UserNotLogined />
         </div>
       ) : (
